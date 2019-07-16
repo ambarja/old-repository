@@ -151,12 +151,22 @@ class: center, middle, inverse
 # Parte práctica 
 
 ---
-# Mi primer proyecto dentro de QGIS
+# Ejercicio 001 
 
 ```{r, echo=FALSE,fig.align='center'}
-knitr::include_graphics("img/MiprimerProject.png")
+knitr::include_graphics("img/part1.png")
 ```
+---
+# Ejercicio 002
 
+```{r, echo=FALSE,fig.align='center'}
+knitr::include_graphics("img/parte2.png")
+```
+---
+# Ejercicio 003
+```{r, echo=FALSE,fig.align='center'}
+knitr::include_graphics("img/parte3.png")
+```
 ---
 background-size: cover
 class: center, middle, inverse
@@ -253,6 +263,12 @@ El índice de autocorrelación espacial de Moran mide esta última de acuerdo co
 ```{r, echo=FALSE,fig.align='center', out.height='200px',out.width='600px'}
 knitr::include_graphics("img/indicemoran.png")
 ```
+
+---
+# Ejercicio 004
+
+
+
 
 ---
 background-size: cover
