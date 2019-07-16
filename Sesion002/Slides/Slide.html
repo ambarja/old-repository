@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Curso Introductorio al análisis espacial de datos con QGIS</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Antony Barja" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Curso Introductorio al análisis espacial de datos con QGIS
+## <code>&lt;img src=&quot;img/barper.svg&quot;&gt;</code><br>Sesion 002
+### Antony Barja
+### Analista junior en datos espaciales
+### 2019/07/07 (updated: 2019-07-15)
+
+---
+
+
+
+background-size: cover
+class: center, middle, inverse
+
+# Geographical data mining
+
+---
+# Minería de datos geográficos:La nueva moneda
+.pull-left[
+Según **Openshaw**, profesor de Centro de Geografía Computacional de la Universidad Leeds en Reino Unido,este término hace referencia a **la inmensa explosión en los datos geográficos** ocasionados por el desarrollo en la tecnología informática, sensores remotos, Mapeo digital y la difusión global del SIG.
+
+&lt;br&gt;
+##### _Paper de Openshaw_ [aquí](http://www.geocomputation.org/1999/051/gc_051.htm)
+]
+
+.pull-left[
+
+&lt;img src="img/book.jpg" width="200px" height="300px" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+#  Minería de datos geográficos:La nueva moneda
+
+.pull-left[
+**La velocidad en la que se generan los datos geoespaciales supera nuestras capacidades computacionales** para extraer patrones para la comprensión de un mundo que cambia dinámicamente, la geoinformática y la minería de datos se centra en el desarrollo e implementación de algoritmos computacionales para resolver estos problemas.(**Cervone y Lin ,2014**).
+]
+
+.pull-right[
+&lt;img src="img/book2.jpg" width="200px" height="300px" style="display: block; margin: auto;" /&gt;
+]
+---
+# Entonces:
+
+Geographycal Data Mining hace referencia al inmenso volumen de datos georreferenciados que se van generando de manera continua, y que hoy en día en su mayoria estan disponibles en fuentes abiertas dentro de mundo online de internet.
+
+# Conclusión:
+
+En esta nueva geografía aparece un nuevo espacio de relación, el entorno digital, al que denominamos cibergeografía (**Fuenzalida, Buzai, Jiménez, y de León Loza, 2015**). No se trata de una nueva disciplina, sino de una evolución en lo que, quizás, sea el cambio más importante desde que Alexander Von Humboldt iniciara lo que se considera la geografía moderna (**Capel Sáez, 1981**).
+
+---
+# Fuentes de información geográfica abierta 
+# WorldPop
+Posee información espacial y temporal de la demografía a una resolución de 100m
+
+&lt;img src="img/pop.PNG" width="550px" height="320px" style="display: block; margin: auto;" /&gt;
+
+##### _Link de WorldPop_ [aquí](https://www.worldpop.org/geodata/listing?id=29)
+
+---
+# SRTM
+Modelos de elevación digital de terreno de 30 m  
+
+&lt;img src="img/srtm.png" width="1803" height="420px" style="display: block; margin: auto;" /&gt;
+
+##### _Link de SRTM_ [aquí](http://srtm.csi.cgiar.org/srtmdata/)
+
+---
+# Jaxa DEM
+Modelos digitales de superficie de 30 m 
+
+&lt;img src="img/jaxa.png" width="1407" style="display: block; margin: auto;" /&gt;
+
+##### _Link de Jaxa DEM_ [aquí](https://www.eorc.jaxa.jp/ALOS/en/aw3d30/index.htm)
+
+---
+# GEE
+Posee diferentes base de datos de imágenes satelitales entre las más inportantes destaca la serie de Landsat, MODIS y Sentinel.
+
+&lt;img src="img/gee.jpg" width="1067" style="display: block; margin: auto;" /&gt;
+
+##### _Link de GEE_ [aquí](https://code.earthengine.google.com/afb96dd57557f0c2b56693fdd15f8309)
+
+---
+# Map the malaria atlas project
+Posee información sobre el tiempo de viaje que tarda una persona en trasladarce a una ciudad más cercana.
+&lt;img src="img/map.png" width="1821" height="400px" style="display: block; margin: auto;" /&gt;
+
+##### _Link de Map the malaria atlas project_ [aquí](https://map.ox.ac.uk/trends/country)
+
+---
+# Worldclim
+Datos de variables climáticas como la Pp, T y otras variables bioclimáticas 
+
+&lt;img src="img/clim.jpg" width="1365" style="display: block; margin: auto;" /&gt;
+
+##### _Link de worldclim_ [aquí](https://www.worldclim.org/)
+---
+# SoilGRID
+Contiene información sobre el tipo de suelo y la taxonomía del suelo 
+&lt;img src="img/soilgrid.png" width="1821" style="display: block; margin: auto;" /&gt;
+
+##### _Link de SoildGRID_ [aquí](https://soilgrids.org/#!/?layer=ORCDRC_M_sl2_250m&amp;vector=1)
+---
+# OpenLandMap
+Contiene información de diferentes tipos de cubiertas de la superficie terrestre como NDVI, TWI, litología, Pendiente, etc.
+
+&lt;img src="img/openland.png" width="1820" style="display: block; margin: auto;" /&gt;
+
+##### _Link de OpenLandMap_ [aquí](https://openlandmap.org)
+---
+# OSM
+Contiene información vectorial de libre acceso 
+
+&lt;img src="img/osm.png" width="1817" style="display: block; margin: auto;" /&gt;
+
+##### _Link de OSM_ [aquí](https://www.openstreetmap.org/#map=5/-9.297/-75.015)
+---
+background-size: cover
+class: center, middle, inverse
+
+# Parte práctica 
+
+---
+# Mi primer proyecto dentro de QGIS
+
+&lt;img src="img/MiprimerProject.png" style="display: block; margin: auto;" /&gt;
+
+---
+background-size: cover
+class: center, middle, inverse
+
+# Introducción a la estadística espacial
+---
+
+# Introducción a la estadística espacial
+.pull-left[
+El análisis de datos espaciales se ha hecho frecuente en muchas áreas del
+conocimiento como en la:
+
+* Geografía
+* Geología
+* Ciencias ambientales
+* Economía
+* Epidemiología o medicina
+
+**Las técnicas de estadísticas clásicas** suponen que al estudiar un fenómeno se realizan observaciones bajo circunstancias idénticas y además que las **observaciones son independientes.**
+]
+
+.pull-right[
+
+&lt;img src="img/spatial.jpg" width="300px" height="400px" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Introducción a la estadística espacial
+.pull-left[
+La estadística clasica no es convenientes para para analizar fenómenos que varían en el tiempo o espacio, cuando se tienen datos espaciales, intuitivamente se tiene la noción de que **observaciones cercanas están correlacionadas**.
+
+**La primera ley de la geografía** (principio de autocorrelación espacial), fue formulado por el geógrafo **Waldo Tobler**:
+
+Todas las cosas están correlacionadas entre sí, pero las cosas más próximas en el espacio tienen una relación mayor que las distantes.
+]
+
+.pull-right[
+
+&lt;img src="img/vuln.jpeg" width="300px" height="400px" style="display: block; margin: auto;" /&gt;
+]
+---
+# La estadística espacial se divide en 3 grandes áreas:
+
+.pull-left[
+### Análisis de patrones puntual
+### Geoestadística
+### Análisis de datos regionales
+]
+
+.pull-right[
+&lt;img src="img/bookbetter.jpg" width="200px" height="300px" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Análisis regional de datos o econometría espacial 
+Se recopilan tantos datos en las divisiones administrativas que existen técnicas especializadas para analizarlos.
+
+&lt;img src="img/region.png" width="650px" height="350px" style="display: block; margin: auto;" /&gt;
+
+---
+# Autocorrelación espacial 
+
+.pull-left[
+&lt;br&gt;
+
+La identificación de modelos geográficos es fundamental para comprender el comportamiento de los fenómenos espaciales (Griffith,1987).
+
+La Autocorrelación espacial nos permite indentificar patrones espaciales cuya tendencias son de agrupación, dispersión o de un proceso aleatorio de un determinado fenómeno geográfico.
+]
+
+.pull-right[
+&lt;br&gt;
+&lt;img src="img/moran2.jpg" width="400px" height="300px" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Índice de moran 
+
+El índice de autocorrelación espacial de Moran mide esta última de acuerdo con las posiciones y valores de la entidad. Al usar un conjunto de entidades y el atributo asociado, proporciona una evaluación de si el modelo está agrupado, disperso o aleatorio, utilizando un valor de -1 a 1.
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="img/indicemoran.png" width="600px" height="200px" style="display: block; margin: auto;" /&gt;
+
+---
+background-size: cover
+class: center, middle, inverse
+
+#Gracias !
+🗺️
+&lt;div&gt;
+ &lt;img src="img/github.png" width="30" height="30" style="float: none;" /&gt;
+&lt;a href="https://github.com/barja8" &gt;barja8.github&lt;/a&gt;
+ &lt;/div&gt;
+
+
+&lt;div&gt;
+ &lt;img src="img/Twitter.png" width="30" height="30" style="float: none;" /&gt;
+ &lt;a href="https://twitter.com/AntonyBarja1"&gt;@Antony.Barja&lt;/a&gt;
+ &lt;/div&gt;
+
+
+&lt;div&gt;
+ &lt;img src="img/gmail.png" width="30" height="30" style="float: none;" /&gt;
+ &lt;a href=mailto:"antony.barja8@gmail.com"&gt;antony.barja8&lt;/a&gt;
+ &lt;/div&gt;
+
+
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
