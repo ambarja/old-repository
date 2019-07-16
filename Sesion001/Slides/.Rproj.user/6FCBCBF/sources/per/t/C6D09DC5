@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1562435557737.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4000813314",
+    "id" : "C6D09DC5",
+    "lastKnownWriteTime" : 1563251900,
+    "last_content_update" : 1563251900525,
+    "path" : "~/Documentos/Github/CursoQGIS3.X/Sesion001/Slides/Slide.Rmd",
+    "project_path" : "Slide.Rmd",
+    "properties" : {
+        "cursorPosition" : "4,48",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
