@@ -39,7 +39,7 @@ class: center, middle, inverse
 knitr::include_graphics("img/parte1.png")
 ```
 
-##### _Insumos aquí_ [aquí](https://www.worldpop.org/geodata/listing?id=29)
+##### _Insumos aquí_ [aquí](https://github.com/barja8/CursoQGIS3.X/tree/master/Sesion003/Insumos/Ejercicio002)
 ---
 # Georreferenciación de imagenes satelitales
 
@@ -47,12 +47,12 @@ knitr::include_graphics("img/parte1.png")
 knitr::include_graphics("img/mosaico.png")
 ```
 
-##### _Insumos aquí_ [aquí](https://www.worldpop.org/geodata/listing?id=29)
 ---
 
 background-size: cover
 class: center, middle, inverse
 # Plugins para Teledetección
+
 ---
 # Plugin de mayor importnacia: **SCP**
 
@@ -295,6 +295,7 @@ knitr::include_graphics("img/topografia.png")
 knitr::include_graphics("img/cuenca.png")
 ```
 
+##### _Insumos aquí_ [aquí](https://github.com/barja8/CursoQGIS3.X/tree/master/Sesion003/Insumos/Ejercicio002)
 ---
 # Ejercicio parte III
 
