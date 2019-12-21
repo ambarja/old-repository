@@ -373,7 +373,7 @@ knitr::include_graphics("img/paper.png")
 knitr::include_graphics("img/MiprimerProject.png")
 ```
 
-##### _Insumos_ [Aquí 👇](https://github.com/barjageo/CursoQGIS3.X/tree/master/Sesion001/Insumos)
+##### _Insumos_ [Aquí 👇 ] (https://raw.githubusercontent.com/barja8/CursoQGIS3.X/master/Sesion001/Insumos/Peligro_Huayco.gpkg)
 ---
 background-size: cover
 class: center, middle, inverse
