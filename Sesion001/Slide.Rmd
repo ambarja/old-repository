@@ -1,40 +1,40 @@
 ---
-title: "Curso Introductorio al análisis espacial de datos con QGIS"
-subtitle:  '`<img src="img/barper.svg">`<br>Sesion 001'
-author: 'Antony Barja'
-institute: 'Analista junior en datos espaciales'
+title: "Introducción al análisis de datos espaciales con QGIS3.X"
+subtitle:  '🗺️<br/>Lección01'
+author: 'AntonyBarja<br>Geographer Freelance<a href="https://barja8.github.io/" ><br/>barja8.github.io</a>'
 date: "2019/07/07 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
-    lib_dir: libs
-    nature:
-      highlightStyle: github
+    css: "my-theme.css"
+    seal: true
+    nature: 
+      highlightStyle: dracula
       highlightLines: true
+      ratio: '4:3'
       countIncrementalSlides: false
 ---
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-```
-
+background-size: cover
+class: center, middle, inverse
 # Aspectos Generales de los Sistemas de Información Geográfica
-
+---
+# Qué es GIS o SIG ? 
+--
+<br/>
 .pull-left[
-
-¿Qué es un SIG?
-<br>
 Es un sistema que integra tecnología informática, personas e información geográfica y cuya principal función es capturar, analizar, almacenar, editar y representar datos georreferenciados (**Olaya,2014**).
-<br>
-<br>
+
 **Desde un perpectiva técnica**:
-<br>
-`Es una herramienta integradora que permite manipular, getionar y trabajar información georreferenciada.`
+
+*Es una herramienta integradora que permite manipular, gestionar y trabajar información georreferenciada*
 
 ##### _Mas información_ [aquí](http://volaya.github.io/libro-sig/)
 ]
 
 .pull-left[
 
-![](img/Olaya.jpg)
+```{r,echo=FALSE, out.height=350,out.width=450}
+knitr::include_graphics('img/Olaya.jpg')
+```
 
 ]
 <!-- class: inverse, center, middle -->
@@ -189,7 +189,7 @@ knitr::include_graphics("img/OpenScience.png")
 ##### _Mas información_ [aquí](https://www.tandfonline.com/doi/pdf/10.1080/13658816.2015.1137579?needAccess=true)
 ---
 # Qué es QGIS ?
-Es un software libre y de código abierto que se ha convertido en un potente software SIG de escritorio que permite a los usuarios crear, editar, visualizar, analizar y publicar información geoespacial (www.qgis.org).
+Es un **software libre y de código abierto** que se ha convertido en un potente software SIG de escritorio que permite a los usuarios crear, editar, visualizar, analizar y publicar información geoespacial (www.qgis.org).
 <br>
 <br>
 ```{r,echo=FALSE,out.width = "660px",fig.align='center'}
@@ -232,27 +232,26 @@ knitr::include_graphics('img/dev.png')
 
 ---
 # Por qué usar QGIS?
-.pull-top[
-```{r,echo=FALSE,out.width="550px",out.height="200px",fig.align='center'}
-knitr::include_graphics('img/trends.png')
-```
-]
 
-.pull-down[
-```{r,echo=FALSE, out.width="550px",out.height="200px",fig.align='center'}
-knitr::include_graphics('img/bar.jpg_large')
+```{r,echo=FALSE,out.height=400,out.width=950}
+knitr::include_graphics('img/timeseries.png')
 ```
-]
+---
+# Por qué usar QGIS?
+
+```{r,echo=FALSE,fig.align='center'}
+knitr::include_graphics('img/version.png')
+```
 
 ---
 
 background-size: cover
 class: center, middle, inverse
 
-# Parte práctica 
+# Instalación del software 
 
 ---
-# Descargando e instalando el software QGIS
+# Para un sistema operativo de **Windows**
 La instalación **depende del sistema operativo (SO)**, para este ejemplo realizaremos el procedimiento de instalación para en el SO de Windows.
 
 .pull-left[
@@ -270,9 +269,27 @@ knitr::include_graphics("img/insta02.png")
 ]
 
 ---
+# Para un sistema operativo de **Linux**
+Esto va a depender de acuerdo al tipo de distribución, de preferencia se recomienda usar la distribución de ubuntu o sus variantes.
+
+```sh 
+deb     https://qgis.org/debian  bionic main
+deb-src https://qgis.org/debian  bionic main
+
+wget -O - https://qgis.org/downloads/qgis-2019.gpg.key | gpg --import
+gpg --fingerprint 51F523511C7028C3
+
+gpg --export --armor 51F523511C7028C3 | sudo apt-key add 
+
+sudo apt-get update
+sudo apt-get install qgis qgis-plugin-grass
+
+```
+
+---
 # Componentes de la Interfaz Gráfica de Usuario(**GUI**) de QGIS
 
-```{r, echo=FALSE,out.width="600px",out.height="400"}
+```{r, echo=FALSE}
 knitr::include_graphics("img/gui.png")
 ```
 
@@ -317,17 +334,18 @@ knitr::include_graphics("img/plugin.png")
 ---
 # Cómo instalar un plugin?  
 
-```{r, echo=FALSE,out.width="600px",out.height="400",fig.align='center'}
+```{r, echo=FALSE,out.width=900}
 knitr::include_graphics("img/installingplugin.gif")
 ```
 
 ---
-# Instalacion de plugin para personalizar **GUI**
-
+# Instalacion de plugin para guardar proyectos
 
 .pull-left[
+Existen varios plugins para guardar proyectos dentro de QGIS y hacer de estos "transferibles" de un usuario a otro, estos son:
+* **Qpackages**
+* **Qconsolidate**
 
-Load QSS es un plugin de QGIS que permite personalizar la apariencia de la interfaz gráfica a criterio del mismo usuario.
 ```{r, echo=FALSE,out.width="250px",out.height="150",fig.align='center'}
 knitr::include_graphics("img/personalizacion.png")
 ```
@@ -335,7 +353,7 @@ knitr::include_graphics("img/personalizacion.png")
 
 .pull-right[
 
-```{r, echo=FALSE,out.width="700px",out.height="250",fig.align='right'}
+```{r, echo=FALSE,fig.align='right'}
 knitr::include_graphics("img/personalizacion2.png")
 ```
 ]
@@ -355,34 +373,27 @@ knitr::include_graphics("img/paper.png")
 knitr::include_graphics("img/MiprimerProject.png")
 ```
 
-##### _Insumos_ [Aquí 🐇👇](https://github.com/barjageo/CursoQGIS3.X/tree/master/Sesion001/Insumos)
+##### _Insumos_ [Aquí 👇](https://github.com/barjageo/CursoQGIS3.X/tree/master/Sesion001/Insumos)
 ---
 background-size: cover
 class: center, middle, inverse
 
-#Gracias !
-🗺️
+class:center,inverse
+# GRACIAS!
 <div>
- <img src="img/github.png" width="30" height="30" style="float: none;" />
+ <img src='img/avatar.png' width="200" height="230" style="float: none;"/>
+<br/>
+<br/>
+<div>
+<img src="img/git.png" width="30" height="30" style="float: none;" />
 <a href="https://github.com/barja8" >barja8.github</a>
  </div>
 
-
 <div>
- <img src="img/Twitter.png" width="30" height="30" style="float: none;" />
- <a href="https://twitter.com/AntonyBarja1">@Antony.Barja</a>
+ <img src="img/gmail.png" width="30" height="20" style="float: none;" />
+ <a href=mailto:"antony.barja8@gmail.com">antony.barja8@gmail.com</a>
  </div>
-
-
-<div>
- <img src="img/gmail.png" width="30" height="30" style="float: none;" />
- <a href=mailto:"antony.barja8@gmail.com">antony.barja8</a>
- </div>
-
-
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)
-
-
 
 

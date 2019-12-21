@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>Curso Introductorio al análisis espacial de datos con QGIS</title>
+    <title>Introducción al análisis de datos espaciales con QGIS3.X</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Antony Barja" />
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <meta name="author" content="AntonyBarja Geographer Freelance barja8.github.io" />
+    <link rel="stylesheet" href="my-theme.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Curso Introductorio al análisis espacial de datos con QGIS
-## <code>&lt;img src=&quot;img/barper.svg&quot;&gt;</code><br>Sesion 001
-### Antony Barja
-### Analista junior en datos espaciales
-### 2019/07/07 (updated: 2019-07-15)
+# Introducción al análisis de datos espaciales con QGIS3.X
+## 🗺️<br/>Lección01
+### AntonyBarja<br>Geographer Freelance<a href="https://barja8.github.io/" ><br/>barja8.github.io</a>
+### 2019/07/07 (updated: 2019-12-20)
 
 ---
 
-
-
+background-size: cover
+class: center, middle, inverse
 # Aspectos Generales de los Sistemas de Información Geográfica
-
+---
+# Qué es GIS o SIG ? 
+--
+&lt;br/&gt;
 .pull-left[
-
-¿Qué es un SIG?
-&lt;br&gt;
 Es un sistema que integra tecnología informática, personas e información geográfica y cuya principal función es capturar, analizar, almacenar, editar y representar datos georreferenciados (**Olaya,2014**).
-&lt;br&gt;
-&lt;br&gt;
+
 **Desde un perpectiva técnica**:
-&lt;br&gt;
-`Es una herramienta integradora que permite manipular, getionar y trabajar información georreferenciada.`
+
+*Es una herramienta integradora que permite manipular, gestionar y trabajar información georreferenciada*
 
 ##### _Mas información_ [aquí](http://volaya.github.io/libro-sig/)
 ]
 
 .pull-left[
 
-![](img/Olaya.jpg)
+&lt;img src="img/Olaya.jpg" width="450" height="350" /&gt;
 
 ]
 &lt;!-- class: inverse, center, middle --&gt;
@@ -168,7 +165,7 @@ Open Source Geospatial Foundation, es una organización no gubernamental sin fin
 ##### _Mas información_ [aquí](https://www.tandfonline.com/doi/pdf/10.1080/13658816.2015.1137579?needAccess=true)
 ---
 # Qué es QGIS ?
-Es un software libre y de código abierto que se ha convertido en un potente software SIG de escritorio que permite a los usuarios crear, editar, visualizar, analizar y publicar información geoespacial (www.qgis.org).
+Es un **software libre y de código abierto** que se ha convertido en un potente software SIG de escritorio que permite a los usuarios crear, editar, visualizar, analizar y publicar información geoespacial (www.qgis.org).
 &lt;br&gt;
 &lt;br&gt;
 &lt;img src="img/qgis.gif" width="660px" style="display: block; margin: auto;" /&gt;
@@ -205,23 +202,22 @@ Entre ellas tenemos a la versión:
 
 ---
 # Por qué usar QGIS?
-.pull-top[
-&lt;img src="img/trends.png" width="550px" height="200px" style="display: block; margin: auto;" /&gt;
-]
 
-.pull-down[
-&lt;img src="img/bar.jpg_large" width="550px" height="200px" style="display: block; margin: auto;" /&gt;
-]
+&lt;img src="img/timeseries.png" width="950" height="400" /&gt;
+---
+# Por qué usar QGIS?
+
+&lt;img src="img/version.png" width="2180" style="display: block; margin: auto;" /&gt;
 
 ---
 
 background-size: cover
 class: center, middle, inverse
 
-# Parte práctica 
+# Instalación del software 
 
 ---
-# Descargando e instalando el software QGIS
+# Para un sistema operativo de **Windows**
 La instalación **depende del sistema operativo (SO)**, para este ejemplo realizaremos el procedimiento de instalación para en el SO de Windows.
 
 .pull-left[
@@ -235,9 +231,27 @@ Instalador de red OSGeo4W
 ]
 
 ---
+# Para un sistema operativo de **Linux**
+Esto va a depender de acuerdo al tipo de distribución, de preferencia se recomienda usar la distribución de ubuntu o sus variantes.
+
+```sh 
+deb     https://qgis.org/debian  bionic main
+deb-src https://qgis.org/debian  bionic main
+
+wget -O - https://qgis.org/downloads/qgis-2019.gpg.key | gpg --import
+gpg --fingerprint 51F523511C7028C3
+
+gpg --export --armor 51F523511C7028C3 | sudo apt-key add 
+
+sudo apt-get update
+sudo apt-get install qgis qgis-plugin-grass
+
+```
+
+---
 # Componentes de la Interfaz Gráfica de Usuario(**GUI**) de QGIS
 
-&lt;img src="img/gui.png" width="600px" height="400" /&gt;
+&lt;img src="img/gui.png" width="1697" /&gt;
 
 ---
 # Explorando los diferentes contenidos que presenta la barra de menú
@@ -272,21 +286,22 @@ Los lenguajes de programación que son empleados por los usuarios para crear plu
 ---
 # Cómo instalar un plugin?  
 
-&lt;img src="img/installingplugin.gif" width="600px" height="400" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/installingplugin.gif" width="900" /&gt;
 
 ---
-# Instalacion de plugin para personalizar **GUI**
-
+# Instalacion de plugin para guardar proyectos
 
 .pull-left[
+Existen varios plugins para guardar proyectos dentro de QGIS y hacer de estos "transferibles" de un usuario a otro, estos son:
+* **Qpackages**
+* **Qconsolidate**
 
-Load QSS es un plugin de QGIS que permite personalizar la apariencia de la interfaz gráfica a criterio del mismo usuario.
 &lt;img src="img/personalizacion.png" width="250px" height="150" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
 
-&lt;img src="img/personalizacion2.png" width="700px" height="250" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="img/personalizacion2.png" width="1989" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
@@ -298,41 +313,37 @@ Load QSS es un plugin de QGIS que permite personalizar la apariencia de la inter
 ---
 # Mi primer proyecto dentro de QGIS
 
-&lt;img src="img/MiprimerProject.png" width="1821" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/MiprimerProject.png" width="1809" style="display: block; margin: auto;" /&gt;
 
-##### _Insumos_ [Aquí 🐇👇](https://github.com/barjageo/CursoQGIS3.X/tree/master/Sesion001/Insumos)
+##### _Insumos_ [Aquí 👇](https://github.com/barjageo/CursoQGIS3.X/tree/master/Sesion001/Insumos)
 ---
 background-size: cover
 class: center, middle, inverse
 
-#Gracias !
-🗺️
+class:center,inverse
+# GRACIAS!
 &lt;div&gt;
- &lt;img src="img/github.png" width="30" height="30" style="float: none;" /&gt;
+ &lt;img src='img/avatar.png' width="200" height="230" style="float: none;"/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;div&gt;
+&lt;img src="img/git.png" width="30" height="30" style="float: none;" /&gt;
 &lt;a href="https://github.com/barja8" &gt;barja8.github&lt;/a&gt;
  &lt;/div&gt;
 
-
 &lt;div&gt;
- &lt;img src="img/Twitter.png" width="30" height="30" style="float: none;" /&gt;
- &lt;a href="https://twitter.com/AntonyBarja1"&gt;@Antony.Barja&lt;/a&gt;
+ &lt;img src="img/gmail.png" width="30" height="20" style="float: none;" /&gt;
+ &lt;a href=mailto:"antony.barja8@gmail.com"&gt;antony.barja8@gmail.com&lt;/a&gt;
  &lt;/div&gt;
-
-
-&lt;div&gt;
- &lt;img src="img/gmail.png" width="30" height="30" style="float: none;" /&gt;
- &lt;a href=mailto:"antony.barja8@gmail.com"&gt;antony.barja8&lt;/a&gt;
- &lt;/div&gt;
-
-
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlightStyle": "dracula",
 "highlightLines": true,
+"ratio": "4:3",
 "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
@@ -373,7 +384,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 (function() {
