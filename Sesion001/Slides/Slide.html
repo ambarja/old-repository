@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introducción al análisis de datos espaciales con QGIS3.X</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="AntonyBarja Geographer Freelance barja8.github.io" />
+    <link rel="stylesheet" href="my-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introducción al análisis de datos espaciales con QGIS3.X
+## 🗺️<br/>Lección01
+### AntonyBarja<br>Geographer Freelance<a href="https://barja8.github.io/" ><br/>barja8.github.io</a>
+### 2019/07/07 (updated: 2019-12-20)
+
+---
+
+background-size: cover
+class: center, middle, inverse
+# Aspectos Generales de los Sistemas de Información Geográfica
+---
+# Qué es GIS o SIG ? 
+--
+&lt;br/&gt;
+.pull-left[
+Es un sistema que integra tecnología informática, personas e información geográfica y cuya principal función es capturar, analizar, almacenar, editar y representar datos georreferenciados (**Olaya,2014**).
+
+**Desde un perpectiva técnica**:
+
+*Es una herramienta integradora que permite manipular, gestionar y trabajar información georreferenciada*
+
+##### _Mas información_ [aquí](http://volaya.github.io/libro-sig/)
+]
+
+.pull-left[
+
+&lt;img src="img/Olaya.jpg" width="450" height="350" /&gt;
+
+]
+&lt;!-- class: inverse, center, middle --&gt;
+---
+# Componentes de un SIG
+
+&lt;img src="img/comp.png" width="1707" /&gt;
+
+---
+# Diferencia entre un SIG  y CAD 
+
+.pull-left[
+Sistema de Información Geográfica (**SIG**):
+--
+Diseña para reflejar la realidad, mayor peso a la **gestión de datos**
+
+Diseño Asistido por Ordenador (**CAD**):
+--
+Diseña algo que no existe todavía, mayor peso a la **parte estética**
+
+]
+
+--
+.pull-right[
+&lt;img src="img/sig.gif" width="300px" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="img/cad.gif" width="300px" style="display: block; margin: auto;" /&gt;
+]
+---
+# Qué son los datos espaciales?
+Son todos los datos que presentan un sistema de referencia de coordenadas (src).
+
+&lt;img src="img/latlon.png" width="650px" style="display: block; margin: auto;" /&gt;
+
+---
+# Tipos de datos espaciales
+&lt;br&gt;
+--
+Existen dos tipos de datos espaciales, estos son:
++ **Datos vectoriales**
++ **Datos raster**
+--
+&lt;br&gt;
+
+&lt;img src="img/datsp.png" width="1497" style="display: block; margin: auto;" /&gt;
+
+---
+# Qué es un dato vectorial?
+Son **formas geométricas** (punto, linea y poligonos) que representan a los elementos geográficos que existen en el territorio
+
+&lt;img src="img/vector.png" width="1172" style="display: block; margin: auto;" /&gt;
+
+---
+# Qué es un dato raster?
+Son **matrices de valores**, donde la unidad mínima es el pixel, y este contiene información geolocalizada de tipo continua.
+
+&lt;img src="img/raster.png" width="1151" style="display: block; margin: auto;" /&gt;
+
+---
+# Qué es un geoprocesamiento ? 
+--
+&lt;br&gt;
+La palabra geoprocesamiento involucra varios aspectos cómo:
+--
+&lt;br&gt;
+* Automatizar tareas de administración de datos: **Cortar**, **reproyectar**
+--
+&lt;br&gt;
+* Modelar y análizar patrones espaciales
+--
+&lt;br&gt;
+* Compartir flujos de trabajos
+--
+&lt;br&gt;
+* Desarrollar sus propias herramientas
+&lt;br&gt;
+--
+En conclusión:
+--
+&lt;br&gt;
+##### **SON TODAS LAS OPERACIONES QUE SE REALIZAN CON DATOS GEOGRÁFICOS**.
+.pull-down[
+&lt;img src="img/geopro.gif" width="350px" style="display: block; margin: auto;" /&gt;
+]
+
+##### _Mas información_ [aquí](http://desktop.arcgis.com/es/arcmap/10.3/main/analyze/what-is-geoprocessing.htm)
+
+---
+# Geoprocesamiento de datos vectoriales
+
+&lt;img src="img/geo_vec.png" width="1167" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Geoprocesamiento de datos raster
+
+&lt;img src="img/geo_raster.png" width="1217" style="display: block; margin: auto;" /&gt;
+
+---
+background-size: cover
+class: center, middle, inverse
+
+# Apectos generales del GISc
+
+---
+# Introducción a OSGEO - Fundación geoespacial de codigo abierto 
+
+.pull-left[
+### ¿Qué es OSGEO?
+Open Source Geospatial Foundation, es una organización no gubernamental sin fines de lucro **cuya misión es apoyar y promover el desarrollo colaborativo de software, datos y educación geoespacial de código abierto**.
+
+&lt;img src="img/osgeo.png" width="1600" /&gt;
+]
+
+.pull-right[
+&lt;img src="img/osgeo2.png" width="1028" style="display: block; margin: auto;" /&gt;
+]
+
+##### _Mas información_ [aquí](https://www.osgeo.org/projects/)
+---
+# FOSS4G y su importancia dentro del Open Geographic Information Science ?
+
+&lt;img src="img/OpenScience.png" width="1279" style="display: block; margin: auto;" /&gt;
+
+##### _Mas información_ [aquí](https://www.tandfonline.com/doi/pdf/10.1080/13658816.2015.1137579?needAccess=true)
+---
+# Qué es QGIS ?
+Es un **software libre y de código abierto** que se ha convertido en un potente software SIG de escritorio que permite a los usuarios crear, editar, visualizar, analizar y publicar información geoespacial (www.qgis.org).
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="img/qgis.gif" width="660px" style="display: block; margin: auto;" /&gt;
+---
+# Características de QGIS
+--
+&lt;br&gt;
+* Interfaz gráfica amigable
+--
+&lt;br&gt;
+* Corre en múltiples sistemas operativos (GNU/Linux, Unix, Mac OS, Microsoft Windows y Android)
+--
+&lt;br&gt;
+* Soporta numerosos formatos de archivos y bases de datos, así como servicios web
+--
+&lt;br&gt;
+* Integra de mejor manera otros software libres como SAGA, GRASS Y R, entre otros
+--
+&lt;br&gt;
+* Presenta una comunidad académica y científica muy dinámica.
+
+&lt;img src="img/qgis2.png" width="660px" style="display: block; margin: auto;" /&gt;
+
+---
+# Propina 🗺️
+
+Actualmente, se lanza una nueva versión de QGIS cada cuatro meses; sin embargo QGIS ofrece la elegir entre diferentes versiones.
+Entre ellas tenemos a la versión:
+1. **LTR**:  LANZAMIENTO A LARGO PLAZO (Modificado 1 vez al año)
+2. **LR**:  última versión (Modificado cada 4 meses)
+3. **DEV**: Versión de prueba (Se modifica en meses, semanas o días)
+
+&lt;img src="img/dev.png" width="660px" style="display: block; margin: auto;" /&gt;
+
+---
+# Por qué usar QGIS?
+
+&lt;img src="img/timeseries.png" width="950" height="400" /&gt;
+---
+# Por qué usar QGIS?
+
+&lt;img src="img/version.png" width="2180" style="display: block; margin: auto;" /&gt;
+
+---
+
+background-size: cover
+class: center, middle, inverse
+
+# Instalación del software 
+
+---
+# Para un sistema operativo de **Windows**
+La instalación **depende del sistema operativo (SO)**, para este ejemplo realizaremos el procedimiento de instalación para en el SO de Windows.
+
+.pull-left[
+Instalador autónomo QGIS
+&lt;img src="img/insta01.png" width="450px" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+Instalador de red OSGeo4W
+&lt;img src="img/insta02.png" width="450px" height="400" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Para un sistema operativo de **Linux**
+Esto va a depender de acuerdo al tipo de distribución, de preferencia se recomienda usar la distribución de ubuntu o sus variantes.
+
+```sh 
+deb     https://qgis.org/debian  bionic main
+deb-src https://qgis.org/debian  bionic main
+
+wget -O - https://qgis.org/downloads/qgis-2019.gpg.key | gpg --import
+gpg --fingerprint 51F523511C7028C3
+
+gpg --export --armor 51F523511C7028C3 | sudo apt-key add 
+
+sudo apt-get update
+sudo apt-get install qgis qgis-plugin-grass
+
+```
+
+---
+# Componentes de la Interfaz Gráfica de Usuario(**GUI**) de QGIS
+
+&lt;img src="img/gui.png" width="1697" /&gt;
+
+---
+# Explorando los diferentes contenidos que presenta la barra de menú
+
+&lt;img src="img/menu.gif" width="600px" height="400" style="display: block; margin: auto;" /&gt;
+
+---
+# Explorarando la caja de herramientas o toolbox de QGIS
+
+&lt;img src="img/toolbox.gif" width="600px" height="400" style="display: block; margin: auto;" /&gt;
+
+---
+# ¿Qué son los plugins y para que sirve?
+
+.pull-left[
+Los plugins son herramientas o módulos adicionales que sirven para realizar tareas o geoprocesos que no están incluidos en el mismo programa principal de QGIS.
+Los lenguajes de programación que son empleados por los usuarios para crear plugins de QGIS incluyen a los lenguajes de programación como C++ y **Python**.
+
+&lt;img src="img/pyton.png" width="400px" height="200" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="img/plugin.png" width="400px" height="400" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+
+---
+# Cómo instalar un plugin?  
+
+&lt;img src="img/installingplugin.gif" width="900" /&gt;
+
+---
+# Instalacion de plugin para guardar proyectos
+
+.pull-left[
+Existen varios plugins para guardar proyectos dentro de QGIS y hacer de estos "transferibles" de un usuario a otro, estos son:
+* **Qpackages**
+* **Qconsolidate**
+
+&lt;img src="img/personalizacion.png" width="250px" height="150" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+&lt;img src="img/personalizacion2.png" width="1989" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+# Propina 🗺️
+
+&lt;img src="img/paper.png" width="1665" style="display: block; margin: auto;" /&gt;
+
+##### _Mas información_ [Paper aquí 👇](https://www.mdpi.com/2072-4292/8/5/413)
+---
+# Mi primer proyecto dentro de QGIS
+
+&lt;img src="img/MiprimerProject.png" width="1809" style="display: block; margin: auto;" /&gt;
+
+##### _Insumos_ [Aquí 👇](https://github.com/barjageo/CursoQGIS3.X/tree/master/Sesion001/Insumos)
+---
+background-size: cover
+class: center, middle, inverse
+
+class:center,inverse
+# GRACIAS!
+&lt;div&gt;
+ &lt;img src='img/avatar.png' width="200" height="230" style="float: none;"/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;div&gt;
+&lt;img src="img/git.png" width="30" height="30" style="float: none;" /&gt;
+&lt;a href="https://github.com/barja8" &gt;barja8.github&lt;/a&gt;
+ &lt;/div&gt;
+
+&lt;div&gt;
+ &lt;img src="img/gmail.png" width="30" height="20" style="float: none;" /&gt;
+ &lt;a href=mailto:"antony.barja8@gmail.com"&gt;antony.barja8@gmail.com&lt;/a&gt;
+ &lt;/div&gt;
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "dracula",
+"highlightLines": true,
+"ratio": "4:3",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
