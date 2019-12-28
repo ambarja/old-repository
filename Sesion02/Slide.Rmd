@@ -1,0 +1,284 @@
+---
+  title: "Introducción al análisis de datos espaciales con QGIS3.X"
+  subtitle:  '🗺️<br/>Lección02'
+  author: 'AntonyBarja<br>Geographer Freelance<a href="https://barja8.github.io/" ><br/>barja8.github.io</a>'
+  date: "2019/07/07 (updated: `r Sys.Date()`)"
+  output:
+    xaringan::moon_reader:
+      css: "my-theme.css"
+      seal: true
+    nature: 
+      highlightStyle: dracula
+      highlightLines: true
+      ratio: '4:3'
+      countIncrementalSlides: false
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+background-size: cover
+class: center, middle, inverse
+# Geographical data mining
+
+---
+# Minería de datos geográficos:La nueva moneda
+.pull-left[
+Según **Openshaw**, profesor de Centro de Geografía Computacional de la Universidad Leeds en Reino Unido,este término hace referencia a **la inmensa explosión en los datos geográficos** ocasionados por el desarrollo en la tecnología informática, sensores remotos, Mapeo digital y la difusión global del SIG.
+
+```{r,echo=FALSE}
+knitr::include_graphics('img/geocomputation.jpg')
+```
+
+<br>
+##### _Paper de Openshaw_ [aquí](http://www.geocomputation.org/1999/051/gc_051.htm)
+]
+
+.pull-right[
+
+```{r,echo=FALSE,out.width=280,out.height=390,fig.align='right'}
+knitr::include_graphics("img/book.jpg")
+```
+
+]
+---
+# Otro concepto
+<br>
+.pull-left[
+**La velocidad en la que se generan los datos geoespaciales supera nuestras capacidades computacionales** para extraer patrones para la comprensión de un mundo que cambia dinámicamente, la geoinformática y la minería de datos se centra en el desarrollo e implementación de algoritmos computacionales para resolver estos problemas.(**Cervone y Lin ,2014**).
+]
+.pull-right[
+```{r,echo=FALSE,fig.align='center',out.width=280,out.height=390}
+knitr::include_graphics("img/book2.jpg")
+```
+]
+
+---
+# Entonces:
+## Geographycal Data Mining hace referencia:
+--
+<br>
+* Al inmenso volumen de datos georreferenciados que se van generando de manera continua, y que hoy en día en su mayoria estan disponibles en fuentes abiertas dentro de mundo online de internet.
+</br>
+--
+<br>
+* En esta nueva geografía aparece un nuevo espacio de relación, el **entorno digital**, al que denominamos **cibergeografía** (**Fuenzalida, Buzai, Jiménez, y de León Loza, 2015**).
+</br>
+--
+<br>
+* No se trata de una nueva disciplina, sino de una evolución en lo que, quizás, sea el cambio más importante desde que Alexander Von Humboldt iniciará lo que se considera la geografía moderna (**Capel Sáez, 1981**).
+
+---
+
+background-size: cover
+class: center, middle, inverse
+# Fuentes de información geográfica abierta 
+
+---
+# Population Density Maps + Demographic
+Posee información espacial de la demografía, población infantil y adulta a una resolución de 30m
+
+```{r,echo=FALSE,fig.align='center',  out.height=400,out.width=950}
+knitr::include_graphics("img/facebook.png")
+```
+
+##### _Link de los datset_ [aquí](https://data.humdata.org/dataset/peru-high-resolution-population-density-maps-demographic-estimates)
+
+---
+# WorldPop
+Posee información espacial y temporal de la demografía a una resolución de 100m
+
+```{r,echo=FALSE,fig.align='center',  out.height=410,out.width=950}
+knitr::include_graphics("img/pop.PNG")
+```
+
+##### _Link de WorldPop_ [aquí](https://www.worldpop.org/geodata/listing?id=29)
+
+---
+# SRTM
+Modelos de elevación digital de terreno de 30 m  
+
+```{r,echo=FALSE,fig.align='center',out.height=410,out.width=950}
+knitr::include_graphics("img/srtm.png")
+```
+
+##### _Link de SRTM_ [aquí](http://srtm.csi.cgiar.org/srtmdata/)
+
+---
+# Jaxa DEM
+Modelos digitales de superficie de 30 m 
+
+```{r,echo=FALSE,fig.align='center',out.height=410,out.width=950}
+knitr::include_graphics("img/jaxa.png")
+```
+
+##### _Link de Jaxa DEM_ [aquí](https://www.eorc.jaxa.jp/ALOS/en/aw3d30/index.htm)
+
+---
+# Google Earht Engine 
+Posee diferentes base de datos de imágenes satelitales entre las más inportantes destaca la serie de Landsat, MODIS y Sentinel.
+
+```{r,echo=FALSE,fig.align='center', out.height=410,out.width=950}
+knitr::include_graphics("img/gee.jpg")
+```
+
+##### _Link de GEE_ [aquí](https://code.earthengine.google.com/afb96dd57557f0c2b56693fdd15f8309)
+
+---
+# Map the malaria atlas project
+Posee información sobre el tiempo de viaje que tarda una persona en trasladarce a una ciudad más cercana.
+```{r,echo=FALSE,fig.align='center', out.height=410,out.width=950}
+knitr::include_graphics("img/map.png")
+```
+
+##### _Link de Map the malaria atlas project_ [aquí](https://map.ox.ac.uk/trends/country)
+
+---
+# Worldclim
+Datos de variables climáticas como la Pp, T y otras variables bioclimáticas 
+
+```{r,echo=FALSE,fig.align='center', out.height=410,out.width=950}
+knitr::include_graphics("img/clim.jpg")
+```
+
+##### _Link de worldclim_ [aquí](https://www.worldclim.org/)
+
+---
+# PISCOp
+
+```{r,echo=FALSE,fig.align='center', out.height=410,out.width=950}
+knitr::include_graphics("img/pisco.png")
+```
+##### _Link de datos PISCOp V2.1_ [aquí](https://piscoprec.github.io/webPISCO/spa/)
+---
+# SoilGRID
+Contiene información sobre el tipo de suelo y la taxonomía del suelo 
+```{r,echo=FALSE,fig.align='center', out.height=410,out.width=950}
+knitr::include_graphics("img/soilgrid.png")
+```
+
+##### _Link de SoildGRID_ [aquí](https://soilgrids.org/#!/?layer=ORCDRC_M_sl2_250m&vector=1)
+---
+# OpenLandMap
+Contiene información de diferentes tipos de cubiertas de la superficie terrestre como NDVI, TWI, litología, Pendiente, etc.
+
+```{r,echo=FALSE,fig.align='center', out.height=410,out.width=950}
+knitr::include_graphics("img/openland.png")
+```
+
+##### _Link de OpenLandMap_ [aquí](https://openlandmap.org)
+---
+# OSM
+Contiene información vectorial de libre acceso 
+
+```{r,echo=FALSE,fig.align='center', out.height=410,out.width=950}
+knitr::include_graphics("img/osm.png")
+```
+
+##### _Link de OSM_ [aquí](https://www.openstreetmap.org/#map=5/-9.297/-75.015)
+---
+# OSM Landuse/Landcover
+Base de datos de OSM que contiene información sobre el uso del suelo a nivel global. Actualmente sigue en desarrollo y posee un total de 13 clases de entre ellas destacan zonas urbanas,zonas industriales, comerciales y de transporte,cultivos permanentes, etc
+
+```{r,echo=FALSE,fig.align='center', out.height=390,out.width=950}
+knitr::include_graphics("img/osmland.png")
+```
+
+##### _Link de OSM Landuse/Landcover_ [aquí](https://osmlanduse.org/?fbclid=IwAR3YsM4Q6a9VGZiO11P4SLM_qS2-JlKmt0TEnhfX1g6S2sfYiHOnV5fnKMk#12/-77.03643/-12.0107/0/)
+
+---
+background-size: cover
+class: center, middle, inverse
+# Práctica
+---
+# Análisis y geoprocesamiento con datos vectoriales
+
+```{r,echo=FALSE,fig.align='center', out.height=390,out.width=970}
+knitr::include_graphics("img/Ejercicio03.png")
+```
+---
+# Descargar datos de poblacion desde QGIS
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/pop.png")
+```
+---
+# Descargar datos de OSM
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/OSM.png")
+```
+
+---
+# Descargar datos de sentinel 2
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/SentinelHub.png")
+```
+
+---
+# Descargar datos de sp
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/species.png")
+```
+---
+# Descargar datos de flora y fauna
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/gbif.png")
+```
+---
+# Descargar datos de Landsat, Sentinel,Modis y ASTER
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/scp.png")
+```
+
+---
+# Descargar datos de OpenEO
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/openEO.png")
+```
+
+---
+# Geprocesamiento de datos vectoriales
+  
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/ejercico2.png")
+```
+
+---
+# QGIS aplicado para la evaluación de riesgo de desastre
+
+```{r,echo=FALSE,fig.align='center', out.height=500,out.width=970}
+knitr::include_graphics("img/EVAR.png")
+``` 
+
+---
+background-color:cover
+class:center
+# GRACIAS!
+<div>
+ <img src="img/avatar02.png" width="260" height="260" style="float: none;"/>
+<br/>
+<br/>
+<div>
+ <img src="img/github3.png" width="34" height="34" style="float: none;" />
+<a href="https://github.com/barja8" >barja8.github</a>
+ </div>
+
+<div>
+ <img src="img/Twitter.png" width="28" height="28" style="float: none;" />
+ <a href="https://twitter.com/AntonyBarja1">Antony.Barja</a>
+ </div>
+
+<div>
+ <img src="img/gmail.png" width="30" height="30" style="float: none;" />
+ <a href=mailto:"antony.barja8@gmail.com">antony.barja8</a>
+ </div>
+
+**Slides created via the R package** [**xaringan**](https://github.com/yihui/xaringan)
+

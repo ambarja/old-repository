@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introducción al análisis de datos espaciales con QGIS3.X</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="AntonyBarja Geographer Freelance barja8.github.io" />
+    <link rel="stylesheet" href="my-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introducción al análisis de datos espaciales con QGIS3.X
+## 🗺️<br/>Lección02
+### AntonyBarja<br>Geographer Freelance<a href="https://barja8.github.io/" ><br/>barja8.github.io</a>
+### 2019/07/07 (updated: 2019-12-28)
+
+---
+
+
+
+
+background-size: cover
+class: center, middle, inverse
+# Geographical data mining
+
+---
+# Minería de datos geográficos:La nueva moneda
+.pull-left[
+Según **Openshaw**, profesor de Centro de Geografía Computacional de la Universidad Leeds en Reino Unido,este término hace referencia a **la inmensa explosión en los datos geográficos** ocasionados por el desarrollo en la tecnología informática, sensores remotos, Mapeo digital y la difusión global del SIG.
+
+&lt;img src="img/geocomputation.jpg" width="481" /&gt;
+
+&lt;br&gt;
+##### _Paper de Openshaw_ [aquí](http://www.geocomputation.org/1999/051/gc_051.htm)
+]
+
+.pull-right[
+
+&lt;img src="img/book.jpg" width="280" height="390" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+]
+---
+# Otro concepto
+&lt;br&gt;
+.pull-left[
+**La velocidad en la que se generan los datos geoespaciales supera nuestras capacidades computacionales** para extraer patrones para la comprensión de un mundo que cambia dinámicamente, la geoinformática y la minería de datos se centra en el desarrollo e implementación de algoritmos computacionales para resolver estos problemas.(**Cervone y Lin ,2014**).
+]
+.pull-right[
+&lt;img src="img/book2.jpg" width="280" height="390" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Entonces:
+## Geographycal Data Mining hace referencia:
+--
+&lt;br&gt;
+* Al inmenso volumen de datos georreferenciados que se van generando de manera continua, y que hoy en día en su mayoria estan disponibles en fuentes abiertas dentro de mundo online de internet.
+&lt;/br&gt;
+--
+&lt;br&gt;
+* En esta nueva geografía aparece un nuevo espacio de relación, el **entorno digital**, al que denominamos **cibergeografía** (**Fuenzalida, Buzai, Jiménez, y de León Loza, 2015**).
+&lt;/br&gt;
+--
+&lt;br&gt;
+* No se trata de una nueva disciplina, sino de una evolución en lo que, quizás, sea el cambio más importante desde que Alexander Von Humboldt iniciará lo que se considera la geografía moderna (**Capel Sáez, 1981**).
+
+---
+
+background-size: cover
+class: center, middle, inverse
+# Fuentes de información geográfica abierta 
+
+---
+# Population Density Maps + Demographic
+Posee información espacial de la demografía, población infantil y adulta a una resolución de 30m
+
+&lt;img src="img/facebook.png" width="950" height="400" style="display: block; margin: auto;" /&gt;
+
+##### _Link de los datset_ [aquí](https://data.humdata.org/dataset/peru-high-resolution-population-density-maps-demographic-estimates)
+
+---
+# WorldPop
+Posee información espacial y temporal de la demografía a una resolución de 100m
+
+&lt;img src="img/pop.PNG" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de WorldPop_ [aquí](https://www.worldpop.org/geodata/listing?id=29)
+
+---
+# SRTM
+Modelos de elevación digital de terreno de 30 m  
+
+&lt;img src="img/srtm.png" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de SRTM_ [aquí](http://srtm.csi.cgiar.org/srtmdata/)
+
+---
+# Jaxa DEM
+Modelos digitales de superficie de 30 m 
+
+&lt;img src="img/jaxa.png" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de Jaxa DEM_ [aquí](https://www.eorc.jaxa.jp/ALOS/en/aw3d30/index.htm)
+
+---
+# Google Earht Engine 
+Posee diferentes base de datos de imágenes satelitales entre las más inportantes destaca la serie de Landsat, MODIS y Sentinel.
+
+&lt;img src="img/gee.jpg" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de GEE_ [aquí](https://code.earthengine.google.com/afb96dd57557f0c2b56693fdd15f8309)
+
+---
+# Map the malaria atlas project
+Posee información sobre el tiempo de viaje que tarda una persona en trasladarce a una ciudad más cercana.
+&lt;img src="img/map.png" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de Map the malaria atlas project_ [aquí](https://map.ox.ac.uk/trends/country)
+
+---
+# Worldclim
+Datos de variables climáticas como la Pp, T y otras variables bioclimáticas 
+
+&lt;img src="img/clim.jpg" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de worldclim_ [aquí](https://www.worldclim.org/)
+
+---
+# PISCOp
+
+&lt;img src="img/pisco.png" width="950" height="410" style="display: block; margin: auto;" /&gt;
+##### _Link de datos PISCOp V2.1_ [aquí](https://piscoprec.github.io/webPISCO/spa/)
+---
+# SoilGRID
+Contiene información sobre el tipo de suelo y la taxonomía del suelo 
+&lt;img src="img/soilgrid.png" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de SoildGRID_ [aquí](https://soilgrids.org/#!/?layer=ORCDRC_M_sl2_250m&amp;vector=1)
+---
+# OpenLandMap
+Contiene información de diferentes tipos de cubiertas de la superficie terrestre como NDVI, TWI, litología, Pendiente, etc.
+
+&lt;img src="img/openland.png" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de OpenLandMap_ [aquí](https://openlandmap.org)
+---
+# OSM
+Contiene información vectorial de libre acceso 
+
+&lt;img src="img/osm.png" width="950" height="410" style="display: block; margin: auto;" /&gt;
+
+##### _Link de OSM_ [aquí](https://www.openstreetmap.org/#map=5/-9.297/-75.015)
+---
+# OSM Landuse/Landcover
+Base de datos de OSM que contiene información sobre el uso del suelo a nivel global. Actualmente sigue en desarrollo y posee un total de 13 clases de entre ellas destacan zonas urbanas,zonas industriales, comerciales y de transporte,cultivos permanentes, etc
+
+&lt;img src="img/osmland.png" width="950" height="390" style="display: block; margin: auto;" /&gt;
+
+##### _Link de OSM Landuse/Landcover_ [aquí](https://osmlanduse.org/?fbclid=IwAR3YsM4Q6a9VGZiO11P4SLM_qS2-JlKmt0TEnhfX1g6S2sfYiHOnV5fnKMk#12/-77.03643/-12.0107/0/)
+
+---
+background-size: cover
+class: center, middle, inverse
+# Práctica
+---
+# Análisis y geoprocesamiento con datos vectoriales
+
+&lt;img src="img/Ejercicio03.png" width="970" height="390" style="display: block; margin: auto;" /&gt;
+---
+# Descargar datos de poblacion desde QGIS
+
+&lt;img src="img/pop.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+---
+# Descargar datos de OSM
+
+&lt;img src="img/OSM.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+
+---
+# Descargar datos de sentinel 2
+
+&lt;img src="img/SentinelHub.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+
+---
+# Descargar datos de sp
+
+&lt;img src="img/species.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+---
+# Descargar datos de flora y fauna
+
+&lt;img src="img/gbif.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+---
+# Descargar datos de Landsat, Sentinel,Modis y ASTER
+
+&lt;img src="img/scp.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+
+---
+# Descargar datos de OpenEO
+
+&lt;img src="img/openEO.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+
+---
+# Geprocesamiento de datos vectoriales
+  
+&lt;img src="img/ejercico2.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+
+---
+# QGIS aplicado para la evaluación de riesgo de desastre
+
+&lt;img src="img/EVAR.png" width="970" height="500" style="display: block; margin: auto;" /&gt;
+
+---
+background-color:cover
+class:center
+# GRACIAS!
+&lt;div&gt;
+ &lt;img src="img/avatar02.png" width="260" height="260" style="float: none;"/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;div&gt;
+ &lt;img src="img/github3.png" width="34" height="34" style="float: none;" /&gt;
+&lt;a href="https://github.com/barja8" &gt;barja8.github&lt;/a&gt;
+ &lt;/div&gt;
+
+&lt;div&gt;
+ &lt;img src="img/Twitter.png" width="28" height="28" style="float: none;" /&gt;
+ &lt;a href="https://twitter.com/AntonyBarja1"&gt;Antony.Barja&lt;/a&gt;
+ &lt;/div&gt;
+
+&lt;div&gt;
+ &lt;img src="img/gmail.png" width="30" height="30" style="float: none;" /&gt;
+ &lt;a href=mailto:"antony.barja8@gmail.com"&gt;antony.barja8&lt;/a&gt;
+ &lt;/div&gt;
+
+**Slides created via the R package** [**xaringan**](https://github.com/yihui/xaringan)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
