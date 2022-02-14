@@ -1,4 +1,4 @@
-# **CursoQGIS3.X**
+# **Curso de QGIS3.X**
 
 [![Lifecycle:Experimental](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://github.com/ambarja/qgis-geogis)
 
