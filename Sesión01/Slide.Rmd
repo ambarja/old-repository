@@ -1,7 +1,7 @@
 ---
 title: "Introducción al análisis de datos espaciales con QGIS3.X"
 subtitle:  '🗺️<br/>Lección01'
-author: 'AntonyBarja<br>Geographer Freelance<a href="https://barja8.github.io/" ><br/>barja8.github.io</a>'
+author: 'AntonyBarja<br>Geographer Freelance<a href="https://ambarja.github.io/" ><br/>ambarja.github.io</a>'
 date: "2019/07/07 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
@@ -20,7 +20,7 @@ class: center, middle, inverse
 --
 <br/>
 .pull-left[
-Es un sistema que integra tecnología informática, personas e información geográfica y cuya principal función es capturar, analizar, almacenar, editar y representar datos georreferenciados (**Olaya,2014**).
+Es un sistema que integra tecnología informática, personas e información geográfica y cuya función principal es capturar, analizar, almacenar, editar y representar datos georreferenciados (**Olaya,2014**).
 
 **Desde un perpectiva técnica**:
 
@@ -385,7 +385,7 @@ class:center,inverse
 <br/>
 <div>
 <img src="img/git.png" width="30" height="30" style="float: none;" />
-<a href="https://github.com/barja8" >barja8.github</a>
+<a href="https://github.com/ambarja" >https://github.com/ambarja</a>
  </div>
 
 <div>

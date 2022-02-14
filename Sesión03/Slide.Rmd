@@ -1,7 +1,7 @@
 ---
 title: "Introducción al análisis de datos espaciales con QGIS3.X"
 subtitle:  '🗺️<br/>Lección03'
-author: 'AntonyBarja<br>Geographer Freelance<a href="https://barja8.github.io/" ><br/>barja8.github.io</a>'
+author: 'AntonyBarja<br>Geographer Freelance<a href="https://ambarja.github.io/" ><br/>ambarja.github.io</a>'
 date: "2019/07/07 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
@@ -323,16 +323,19 @@ background-size: cover
 class: center, middle, inverse
 
 #Gracias !
-🗺️
+<div>
+ <img src="img/avatar02.png" width="200" height="200" style="float: none;"/>
+<br/>
+<div/>
 <div>
  <img src="img/github.png" width="30" height="30" style="float: none;" />
-<a href="https://github.com/barja8" >barja8.github</a>
+<a href="https://github.com/ambarja">https://github.com/ambarja</a>
  </div>
 
 
 <div>
  <img src="img/Twitter.png" width="30" height="30" style="float: none;" />
- <a href="https://twitter.com/AntonyBarja1">@Antony.Barja</a>
+ <a href="https://twitter.com/antony_barja">@antony_barja</a>
  </div>
 
 
